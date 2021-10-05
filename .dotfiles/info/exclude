@@ -4,19 +4,18 @@
 # exclude patterns (uncomment them if you want to use them):
 # *.[oa]
 # *~
+#
 # Exlude everything
 *
 # Keep...
-!.zsh_aliase0s
-!.bash_logout
+!.zsh_aliases
 !.zprofile
 !.zshrc
 !.profile
 #
-# !.bash_completion/
-# !.bash_completion/*
 !.config/
 !.config/nvim/
 !.config/nvim/*
 !.R/
 !.R/*
+
