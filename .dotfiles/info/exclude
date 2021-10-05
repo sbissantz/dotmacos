@@ -6,7 +6,6 @@
 # *~
 #
 # Exlude everything
-.dotfiles
 *
 # Keep...
 !.zsh_aliases

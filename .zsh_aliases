@@ -1,0 +1,69 @@
+# Dotfile management with 'gitconf'
+# https://wiki.archlinux.org/index.php/Dotfiles
+#
+alias gitconf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Ranger
+#
+
+alias r="ranger"
+
+# Overwrite/delete warnings
+#
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias cp='cp -i'
+
+# (Colored) ls
+#
+alias l='ls -FG'
+alias ls='ls -F'
+alias ll='ls -lhFG'
+alias la='ls -alhF'
+
+# cd
+#
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+
+# (Colored) grep
+#
+alias grep='grep -G'
+alias egrep='egrep -G'
+alias fgrep='fgrep -G'
+
+# clear
+#
+alias c='clear'
+
+# tar
+#
+alias untar='tar -zxvf'
+alias tarit='tar -zcvf'
+
+# wget 
+#
+alias wget='wget -c '
+
+
+# R
+#
+alias R="R --quiet"
+alias R-devel="R-devel --quiet"
+
+# IP
+#
+
+# external ip
+alias ipe='curl ipinfo.io/ip'
+
+# local ip
+alias ipi='ipconfig getifaddr en0'
+
+# ping
+#
+alias ping='ping -c 5'
+
