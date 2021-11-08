@@ -1,0 +1,85 @@
+#
+# System setup
+#
+
+# Developer tools
+#
+
+Check, if...
+
+    xcode-select -p 
+
+produces... "/Library/Developer/CommandLineTools". If not
+
+    xcode-select --install
+
+# Homebrew
+#
+
+Install with...
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Check if installation was successful
+
+    brew doctor
+
+Download essentials
+
+    brew install git
+    brew install wget
+    brew install --cask r 
+    brew install --cask firefox
+    ...
+    (brew install --cask github (Github Desktop GUI))
+
+# Git, SSH and Github
+#
+
+# Git
+
+    git config --global user.name "foo ba"
+    git config --global user.email "foo@bar.com
+    git config --global color.ui true
+    git config --global core.editor nvim
+
+# SSH
+https://upcloud.com/community/tutorials/use-ssh-keys-authentication/
+
+Tests:
+
+    ls -ld ~/.ssh 
+    mkdir -p ~/.ssh ; chmod 700 ~/.ssh ; ls -ld ~/.ssh
+
+Generate:
+
+    ssh-keygen -t rsa
+
+Copy public key to server or a 3rd party application (e.g. Github)
+
+    ssh-copy-id -i ~/.ssh/id_rsa.pub user@server
+    pbcopy < ~/.ssh/id_rsa.pub
+
+
+Set up an SSH Agent and store the passphrase -- avoids reentering the
+passphrase over and over again.
+
+    which $SHELL
+    ssh-agent /bin/zsh
+    ssh-add ~/.ssh/id_rsa
+
+
+# Github
+
+Test if you are account is recognized on Github
+
+    ssh -T git@github.com
+
+if not copy your public key an github using either... or... and retest
+
+    pbcopy < ~/.ssh/id_rsa.pub
+    ssh-copy-id -i ~/.ssh/id_rsa.pub user@server
+
+# cleanup
+brew cleanup --force
+rm -f -r /Library/Caches/Homebrew/*

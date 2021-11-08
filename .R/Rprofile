@@ -42,16 +42,3 @@ utils::rc.settings(ipck = TRUE)
 # warnings are errors
 #
 # options(warn = 2)
-
-# Get some 'nuggets of truth'
-#
-if(interactive())
-  try(fortunes::fortune(), silent = TRUE)
-
-### Make sure the fortunes package is installed
-.Last = function() {
-  cond = suppressWarnings(!require(fortunes, quietly = TRUE))
-  if(cond)
-    try(install.packages("fortunes"), silent = TRUE)
-  #message("Goodbye Steven at ", date(), "\n")
-}

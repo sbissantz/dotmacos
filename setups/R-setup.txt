@@ -1,0 +1,28 @@
+#
+# R
+#
+
+Tutorial: What They Forgot to Teach You About R
+https://rstats.wtf/
+https://rstats.wtf/set-up-an-r-dev-environment.html
+
+# Installation
+#
+
+Don't use the usual...
+
+    brew install r
+
+Installing R this way, it is not compatible with the CRAN package binaries.
+This implies building and installing ALL packages from source. This takes
+additional time during installation and can lead to more time spent dealing
+with installation issues if a package fails to compile.
+
+Instead, if you prefer the convenience of homebrew, we recommend installing the
+r cask. NOTE: the cask used to be named r-app but the -app suffix was dropped
+due to a homebrew policy change around 2019-03-11.
+
+    brew install --cask r
+
+This will install the CRAN R distribution, so all package binaries will be
+available just like they would be from installing R manually.
