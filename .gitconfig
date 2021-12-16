@@ -1,0 +1,64 @@
+[user]
+	name = Steven Marcel Bißantz
+	email = steven.bissantz@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[color]
+	ui = true
+[core]
+	editior = nvim
+[credential]
+	helper = cache
+[format]
+	pretty = oneline
+[alias]
+	;	
+	; git config
+	;
+	gl = config --list --show-origin
+	;
+	; git log
+	;
+	; Pretty commit logbook 
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	; Prettified changes between commit logs (2 lines)
+	lp2 = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p -2
+	; Pretified last commit 
+	last = log -1 HEAD --stat --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	;	
+	; git status
+	;
+	; Simplified status overview	
+	s = status -sb
+	;
+	; git add
+	;
+	a = add
+	;
+	; git commit
+	;
+	cm = commit -m
+	cam = commit -a -m
+	;
+	; git remote
+	;
+	rv = remote -v
+	;
+	; git diff
+	;
+	d = diff 
+	;
+	; Search for [pattern] in the commit log
+	; search = !git rev-list --all | xargs git grep -F
+	;
+	; git push
+	;
+	p = push 
+	pu = push -u
+[help]
+	autocorrect = 20
+[log]
+	abbrevcommit = yes
