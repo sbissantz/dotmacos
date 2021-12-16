@@ -10,6 +10,7 @@
 	ui = true
 [core]
 	editior = nvim
+	abbrev = 8
 [credential]
 	helper = cache
 [format]
