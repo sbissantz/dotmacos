@@ -60,9 +60,10 @@
 	p = push 
 	pu = push -u
 	;
-	; git reset
+	; git restore 
 	;
-	unstage = reset HEAD --
+	# unstage = reset HEAD --
+	unstage = restore --staged
 [help]
 	autocorrect = 20
 [log]
