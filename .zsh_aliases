@@ -42,10 +42,10 @@ alias ipi='ipconfig getifaddr en0'
 
 # ls
 #
-alias l='ls -F --color=auto'
+alias l='ls -F --color'
 alias ls='ls -F'
-alias ll='ls -lhF --color=auto'
-alias la='ls -alhF --color=auto'
+alias ll='ls -lhF --color'
+alias la='ls -alhF --color'
 
 # mv
 #
