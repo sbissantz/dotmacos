@@ -54,7 +54,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell
     Plug 'sheerun/vim-polyglot'                                                     
     "Vimtex                                                                            
     Plug 'lervag/vimtex'                                                        
-    " Arch theme
+    " Vim surround 
     Plug 'tpope/vim-surround'
     " Parenthesis matching                                                      
     Plug 'jiangmiao/auto-pairs'                                                     
@@ -66,8 +66,10 @@ autocmd BufRead,BufNewFile *.md setlocal spell
  
 call plug#end()   
 
-"colorscheme 256_noir
-colorscheme minimalist
+" colorscheme minimalist 
+colorscheme jellybeans 
+
+
 
 " ================ Nvim-R ==================== "
 " https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt
