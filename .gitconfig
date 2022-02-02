@@ -14,50 +14,51 @@
 [credential]
 	helper = cache
 [format]
-	pretty = oneline
+	; pretty = oneline
 [alias]
 	; git add
 	; add = add
 	; git commit
 	;
-	com = commit
-	comm = commit -m
-	comam = commit -a -m
+	; com = commit
+	; comm = commit -m
+	; comam = commit -a -m
 	; git config
-	con = config
-	congl = config --list --show-origin
+	; con = config
+	; congl = config --list --show-origin
 	;
 	; git diff
 	; diff = diff 
 	; git log
-	log = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	; log = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	; Prettified changes between commit logs (2 lines)
-	logp2 = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p -2
+	; logp2 = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p -2
 	; Pretified last commit 
-	last = log -1 HEAD --stat --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	; last = log -1 HEAD --stat --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	last = log -1 HEAD
 	;
 	; git remote
 	;
-	remv = remote -v
+	; remv = remote -v
 	;
 	; git restore 
 	; unstage = reset HEAD --
-	unstage = restore --staged
+	; unstage = restore --staged
 	;
 	; git status
-	stat=status
+	; stat=status
 	; Simplified status overview	
-	stat = status -sb
+	; stat = status -sb
 	;
 	;
 	; git push
 	;
 	; push = push 
-	pusu = push -u
+	; pusu = push -u
 	;
 	; 
 	; external commands
-	vis = !gitk	
+	; vis = !gitk	
 	visual = !gitk	
 	; Search for [pattern] in the commit log
 	; search = !git rev-list --all | xargs git grep -F
@@ -65,3 +66,5 @@
 	autocorrect = 20
 [log]
 	abbrevcommit = yes
+[push]
+	default = simple
