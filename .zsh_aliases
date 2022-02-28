@@ -62,7 +62,6 @@ alias p='pwd'
 # rm 
 #
 alias rm='rm -iv'
-alias rmdir='rmdir -v'
 
 # ranger
 #
