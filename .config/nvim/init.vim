@@ -69,7 +69,9 @@ call plug#end()
 " colorscheme minimalist 
 colorscheme jellybeans 
 
+" ================ Vimtex ==================== "
 
+syntax enable
 
 " ================ Nvim-R ==================== "
 " https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt
