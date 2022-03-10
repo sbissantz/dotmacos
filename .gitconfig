@@ -21,7 +21,9 @@
 	last = log -1 HEAD
 	unstage = restore --staged
 	unmodify = restore 
+	untrack = rm --cached 
 	visual = !gitk	
+	vivid = !git gui	
 [help]
 	autocorrect = 20
 [log]
