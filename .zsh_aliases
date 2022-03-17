@@ -81,3 +81,7 @@ alias tarit='tar -zcvf'
 #
 alias wget='wget -c '
 
+# youtube-dl
+#
+alias youtube-dl-audio='youtube-dl -f "bestaudio/best" -ciw -o "%(title)s.%(ext)s" -v --extract-audio --audio-quality 0 --audio-format mp3'
+alias youtube-dl-show='youtube-dl -F'
