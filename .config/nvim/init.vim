@@ -70,8 +70,16 @@ call plug#end()
 colorscheme jellybeans 
 
 " ================ Vimtex ==================== "
-
+"
+" This is necessary for VimTeX to load properly. The "indent" is optional.
+" Note that most plugin managers will do this automatically.
+filetype plugin indent on
+" This enables neovim's syntax-related features. Without this, some VimTeX
+" features will not work (see ":help vimtex-requirements" for more info).
 syntax enable
+" Most VimTeX mappings rely on localleader and this can be changed with the
+" following line. The default is usually fine and is the symbol "\".
+let maplocalleader = ","
 
 " ================ Nvim-R ==================== "
 " https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt
