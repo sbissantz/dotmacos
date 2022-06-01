@@ -33,6 +33,7 @@ syntax on                   " syntax highlighting
 
 " ================ Basic ==================== "
 
+let mapleader = "," "Change the leader key from '\' to ','
 filetype plugin indent on " use vims default filetype specific indent scripts
 autocmd BufNewFile,BufRead *.Rmd set filetype=rmd "make .Rmd files open with rmd flavor
 "autocmd BufRead,BufNewFile *.Rmd set ft=rmd.r
@@ -79,7 +80,7 @@ filetype plugin indent on
 syntax enable
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
-let maplocalleader = ","
+ let maplocalleader = ","
 
 " ================ Nvim-R ==================== "
 " https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt
