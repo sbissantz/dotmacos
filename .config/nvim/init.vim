@@ -32,8 +32,9 @@ filetype plugin indent on   " allows auto-indenting depending on file type
 syntax on                   " syntax highlighting 
 
 " ================ Basic ==================== "
-
-let mapleader = "," "Change the leader key from '\' to ','
+"
+let mapleader = ";"
+let maplocalleader = ","
 filetype plugin indent on " use vims default filetype specific indent scripts
 autocmd BufNewFile,BufRead *.Rmd set filetype=rmd "make .Rmd files open with rmd flavor
 "autocmd BufRead,BufNewFile *.Rmd set ft=rmd.r
@@ -63,8 +64,9 @@ autocmd BufRead,BufNewFile *.md setlocal spell
     Plug 'rafi/awesome-vim-colorschemes' 
     " Grammar and spelling 
     Plug 'rhysd/vim-grammarous' 
-    "Plug 'BrandonRoehl/auto-omni'
- 
+    " Stan syntax higlighting
+    Plug 'eigenfoo/stan-vim'
+
 call plug#end()   
 
 " colorscheme minimalist 
@@ -80,7 +82,6 @@ filetype plugin indent on
 syntax enable
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
- let maplocalleader = ","
 
 " ================ Nvim-R ==================== "
 " https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt

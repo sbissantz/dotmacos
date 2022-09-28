@@ -86,3 +86,4 @@ autoload -U compinit && compinit
 # Note: add openssl to PATH
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
