@@ -47,7 +47,9 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " source $HOME/.config/nvim/plugin.vim
 
  call plug#begin()                                                               
-                                                                                 
+
+    " Github copilot
+    Plug 'github/copilot.vim'
     " Interaction between R and Vim                                             
     Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}                                    
     " Comment -- very quickly                                                   
@@ -70,7 +72,13 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 call plug#end()   
 
 " colorscheme minimalist 
+"
 colorscheme jellybeans 
+
+" ================ Copilot ==================== "
+
+imap <silent> <A-j> <Plug>(copilot-next)
+imap <silent> <A-k> <Plug>(copilot-previous)
 
 " ================ Vimtex ==================== "
 "
@@ -82,7 +90,7 @@ filetype plugin indent on
 syntax enable
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
-
+"
 " ================ Nvim-R ==================== "
 " https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt
 " https://www.freecodecamp.org/news/turning-vim-into-an-r-ide-cd9602e8c217/
