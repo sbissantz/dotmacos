@@ -13,6 +13,31 @@ local({
   options(repos = r)
 })
 
+# Store "sectets".
+# If not already created, create a file in the home directory called
+# `.R/.Renviron_private` This file is not tracked by git, so it can contain
+# sensitive information like API keys. It is sourced at the end of this file.
+# E.g. add GITHUB_PAT=ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# As long as you run R as your user, R will still be able to read .Rprivate.
+#--- Important---
+# Don't forget: chmod 600 ~/.R/Rsecret
+# Make sure you own the file: chown $(whoami) ~/.R/Rsecret
+# Note: chown doesn’t print anything when it succeeds.
+# Verify ownership with: ls -l ~/.R | grep Rsecret
+# If you want to remove it from being tracked:
+# dotfiles status        # should still show it
+# dotfiles clean -nd     # preview what will be removed
+# dotfiles clean -fd     # actually remove untracked ignored files from Git’
+# After this, .R/Rsecret won’t appear in git status anymore, and it won’t be
+# pushed.
+private_path <- file.path(Sys.getenv("HOME"), ".R/Rsecret")
+if (file.exists(private_path)) {
+  readRenviron(private_path)
+} else {
+  cat("It seems that the file '", private_path, "' does not exist.\n",
+          "Please create it to store sensitive information.\n", sep = "")
+}
+
 # Warn on partial matches
 options(warnPartialMatchAttr = TRUE,
         warnPartialMatchDollar = TRUE,
