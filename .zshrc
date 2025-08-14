@@ -72,8 +72,8 @@ PS1="%n@%m %1~ %# "
 # Dotfile management with 'gitconf'
 # https://wiki.archlinux.org/index.php/Dotfiles
 # Moved from "gitc" to "gitconf" to "dotfiles" to "dot". 
-# Use 'dot status' to see the status of your dotfiles.
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Use 'dotfiles status' to see the status of your dotfiles.
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # The rest of the aliases live in ~/.zsh_aliases 
 
 # ZSH aliases
@@ -96,3 +96,4 @@ autoload -U compinit && compinit
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
