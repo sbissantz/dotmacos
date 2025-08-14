@@ -26,3 +26,8 @@
 
 !.gitconfig
 !.gitignore
+
+!README.md
+
+!.olddotfiles/
+!.olddotfiles/*
