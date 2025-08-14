@@ -42,10 +42,9 @@ export BROWSER=/usr/bin/firefox
 
 export R_USER=${HOME}
 export R_ENVIRON_USER=${R_USER}/.R/Renviron
-# export R_LIBS_USER=${R_USER}/Rlibs/%v
 # export R_PROFILE_USER=${R_USER}/.R/Rprofile
 # export R_HISTFILE=${R_USER}/.R/Rhistory
-# R_ENVIRON_USER = ${R_USER}/.R/.Renviron
+# export R_LIBS_USER=${R_USER}/Rlibs/%v
 # Specifiers "%v" and "%p" to host multiple R versions
 # See: /setups/R-setup (.Renviron)
 
