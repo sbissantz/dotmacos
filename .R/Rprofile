@@ -1,0 +1,55 @@
+# Welcome message
+.First <- function() {
+  # Print a welcome message
+  #message("Hi, ", Sys.getenv("USER"),"!\n","working at:", getwd())
+  cat("\n\033[1mHi, ", Sys.getenv("USER"), "!\033[0m", " We're working in: ",
+      getwd(), "\n\n", sep = "")
+}
+
+# Set the CRAN mirror
+local({
+  r = getOption("repos")
+  r["CRAN"] = "https://ftp.fau.de/cran/"
+  options(repos = r)
+})
+
+# Warn on partial matches
+options(warnPartialMatchAttr = TRUE,
+        warnPartialMatchDollar = TRUE,
+        warnPartialMatchArgs = TRUE)
+
+# Fancy quotes are annoying and lead to
+# 'copy + paste' bugs / frustrations
+#
+options(useFancyQuotes = FALSE)
+
+# 'neovim' as editor of choice | edit()
+#
+options(editor="nvim")
+
+# Custom prompt
+#
+options(prompt = "R> ", continue = "  ")
+
+# Autocompletions for package names in
+# `require()`, `library()`
+#
+utils::rc.settings(ipck = TRUE)
+
+# Warnings are errors
+# options(warn = 2)
+
+# Get some 'nuggets of truth'
+#
+#if(interactive())
+  #try(suppressWarnings(fortunes::fortune()), silent = TRUE)
+
+### Make sure the fortunes package is installed
+.Last = function() {
+  #cond = suppressWarnings(!require(fortunes, quietly = TRUE))
+  #if(cond)
+    #try(install.packages("fortunes"), silent = TRUE)
+  #message("Bye,bye!\n", date(), "\n")
+  message("\nBye, ", Sys.getenv("USER"), "!\n")
+}
+

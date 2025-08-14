@@ -1,0 +1,36 @@
+# ===================================================================
+#  R Makevars for macOS with Homebrew & ccache
+# ===================================================================
+
+# 1. Use ccache to speed up recompilation if it's installed.
+CCACHE := $(shell command -v ccache)
+
+# 2. Find the latest GCC toolchain from Homebrew.
+#    This is generally newer and more feature-complete (especially for Fortran)
+#    than the default Clang compiler provided by Apple.
+HOMEBREW_GCC_PREFIX := $(shell brew --prefix gcc 2>/dev/null)
+ifneq ($(strip $(HOMEBREW_GCC_PREFIX)),)
+	LATEST_GCC := $(shell ls -1 $(HOMEBREW_GCC_PREFIX)/bin/gcc-* | sort -V | tail -n 1)
+	LATEST_GXX := $(shell ls -1 $(HOMEBREW_GCC_PREFIX)/bin/g++-* | sort -V | tail -n 1)
+	LATEST_GFORTRAN := $(shell ls -1 $(HOMEBREW_GCC_PREFIX)/bin/gfortran-* | sort -V | tail -n 1)
+endif
+
+# 3. Set the compiler to the Homebrew version if found; otherwise, fall back
+#    to the system default (usually Clang).
+CC_BASE := $(if $(LATEST_GCC),$(LATEST_GCC),$(shell which gcc))
+CXX_BASE := $(if $(LATEST_GXX),$(LATEST_GXX),$(shell which g++))
+FC_BASE := $(if $(LATEST_GFORTRAN),$(LATEST_GFORTRAN),$(shell which gfortran))
+
+# 4. Define the final compiler variables used by R.
+CC = $(CCACHE) $(CC_BASE)
+CXX = $(CCACHE) $(CXX_BASE)
+FC = $(CCACHE) $(FC_BASE)
+F77 = $(FC)
+
+# 5. Add compiler flags for optimization.
+#    -O3: Aggressive optimization for speed.
+#    -march=native: Optimizes code for your specific CPU's instruction set.
+#    -Wno-unused-variable: Suppresses common warnings from R package code.
+CFLAGS = -O3 -march=native -mtune=native -Wno-unused-variable
+CXXFLAGS = -O3 -march=native -mtune=native -Wno-unused-variable
+FFLAGS = -O3 -march=native -mtune=native
