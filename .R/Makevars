@@ -1,7 +1,3 @@
-# ===================================================================
-#  R Makevars for macOS with Homebrew & ccache
-# ===================================================================
-
 # 1. Use ccache to speed up recompilation if it's installed.
 CCACHE := $(shell command -v ccache)
 
