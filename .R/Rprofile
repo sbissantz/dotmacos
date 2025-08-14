@@ -20,7 +20,7 @@ local({
 # E.g. add GITHUB_PAT=ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 # As long as you run R as your user, R will still be able to read .Rprivate.
 #--- Important---
-# Don't forget: chmod 600 ~/.R/Rsecret
+# Don't forget: chmod 600 ~/.R/Rsecrets
 # Make sure you own the file: chown $(whoami) ~/.R/Rsecret
 # Note: chown doesn’t print anything when it succeeds.
 # Verify ownership with: ls -l ~/.R | grep Rsecret
