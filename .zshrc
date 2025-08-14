@@ -69,11 +69,20 @@ PS1="%n@%m %1~ %# "
 # Useful support for interacting with Terminal.app or other terminal programs
 [ -r "/etc/zshrc_$TERM_PROGRAM" ] && . "/etc/zshrc_$TERM_PROGRAM"
 
+# Dotfile management with 'gitconf'
+# https://wiki.archlinux.org/index.php/Dotfiles
+# Moved from "gitc" to "gitconf" to "dotfiles" to "dot". 
+# Use 'dot status' to see the status of your dotfiles.
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# The rest of the aliases live in ~/.zsh_aliases 
+
 # ZSH aliases
 # Note: call before zsh-completions
 #
 if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases
+else
+	echo "Steven, '~/.zsh_aliases' is missing"
 fi
 
 # zsh-completion
@@ -85,5 +94,5 @@ autoload -U compinit && compinit
 # openssl 
 # Note: add openssl to PATH
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
-export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
