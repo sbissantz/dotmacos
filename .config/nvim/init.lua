@@ -89,13 +89,11 @@ require("lazy").setup({
     { "sheerun/vim-polyglot" },
 
 	-- GitHub Copilot
-	{ "github/copilot.vim", 
-      lazy = false,
-	},
+	{ "github/copilot.vim", lazy = false, },
 
     -- Latex 
     { "lervag/vimtex",
-      ft = "tex",        -- load only for LaTeX files
+      lazy = false,
       init = function()
         --vim.g.vimtex_view_method = "zathura"
         -- Disable VimTeX syntax highlighting
@@ -104,8 +102,8 @@ require("lazy").setup({
     },
     -- R programming 
     { "R-nvim/R.nvim",
-     -- Only required if you also set defaults.lazy = true
-    -- lazy = false,
+     -- Only required if you also set defaults.lazy = true 
+    lazy = false,
     -- R.nvim is still young and we may make some breaking changes from time
     -- to time (but also bug fixes all the time). If configuration stability
     -- is a high priority for you, pin to the latest minor version, but unpin
