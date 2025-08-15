@@ -30,7 +30,7 @@ local({
 # dotfiles clean -fd     # actually remove untracked ignored files from Git’
 # After this, .R/Rsecret won’t appear in git status anymore, and it won’t be
 # pushed.
-private_path <- file.path(Sys.getenv("HOME"), ".R/Rsecret")
+private_path <- file.path(Sys.getenv("HOME"), ".R/Rsecrets")
 if (file.exists(private_path)) {
   readRenviron(private_path)
 } else {
