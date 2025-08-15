@@ -18,6 +18,9 @@
 !.config/nvim/
 !.config/nvim/*
 
+!.config/neovide/
+!.config/neovide/*
+
 !.R/
 .R/Rsecret
 !.R/*
@@ -32,6 +35,3 @@
 
 !.olddotfiles/
 !.olddotfiles/*
-
-!neovide/
-!neovide/*
