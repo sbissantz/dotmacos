@@ -83,7 +83,7 @@ require("lazy").setup({
     { "rhysd/vim-grammarous"},
 
     -- Stan syntax highlighting
-    { "eigenfoo/stan-vim", ft = "stan" },
+    { "eigenfoo/stan-vim" },
 
     -- Better syntax support
     { "sheerun/vim-polyglot" },
@@ -105,7 +105,7 @@ require("lazy").setup({
     -- R programming 
     { "R-nvim/R.nvim",
      -- Only required if you also set defaults.lazy = true
-    lazy = false,
+    -- lazy = false,
     -- R.nvim is still young and we may make some breaking changes from time
     -- to time (but also bug fixes all the time). If configuration stability
     -- is a high priority for you, pin to the latest minor version, but unpin
