@@ -32,3 +32,6 @@
 
 !.olddotfiles/
 !.olddotfiles/*
+
+!neovide/
+!neovide/*
