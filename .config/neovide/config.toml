@@ -1,0 +1,32 @@
+fork = false
+# https://neovide.dev/command-line-reference.html#frame
+# full: The default, all decorations.
+# none: No decorations at all. Window cannot be moved nor resized after this.
+# (macOS only) transparent: Transparent decorations including a transparent bar.
+# (macOS only) buttonless: All decorations, but without quit, minimize or fullscreen buttons.
+# frame = "full"
+frame = "transparent"
+idle = true
+# Maximize the window on startup, while still having decorations and the status
+# bar of your OS visible.
+maximized = false
+# neovim-bin = "/usr/bin/nvim" # in reality found dynamically on $PATH if unset
+no-multigrid = false
+srgb = false
+# By default, Neovide opens files given directly to Neovide  multiple tabs
+# no-tabs disables this behavior.
+tabs = true
+theme = "auto"
+title-hidden = true
+# By default, Neovide requests to use VSync on the created window If vsync is
+# disabled, you can set `neovide_refresh_rate` to the refresh rate of your
+# physical hardware. 
+vsync = true 
+# Runs neovim from inside wsl rather than as a normal executable.
+# I am on macOS, so this is not applicable to me.
+wsl = false
+# Font configuration
+[font]
+normal = [] # Will use the bundled Fira Code Nerd Font by default
+size = 9.0
+
