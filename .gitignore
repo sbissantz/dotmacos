@@ -22,8 +22,8 @@
 !.config/neovide/*
 
 !.R/
-.R/Rsecret
 !.R/*
+.R/Rsecrets
 
 !setups/
 !setups/*
