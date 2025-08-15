@@ -97,7 +97,7 @@ require("lazy").setup({
     { "lervag/vimtex",
       ft = "tex",        -- load only for LaTeX files
       init = function()
-        vim.g.vimtex_view_method = "zathura"
+        --vim.g.vimtex_view_method = "zathura"
         -- Disable VimTeX syntax highlighting
         vim.g.vimtex_syntax_enabled = 0
       end
@@ -176,3 +176,33 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+-- ================================
+-- Neovide-specific settings
+-- ================================
+--
+-- https://neovide.dev/faq.html#how-can-i-dynamically-change-the-scale-at-runtime
+--
+if vim.g.neovide then
+
+  -- GUI font
+  vim.opt.guifont = "FiraCode Nerd Font:h11"
+
+  -- Initial scale factor
+  vim.g.neovide_scale_factor = 1.0
+  local change_scale_factor = function(delta)
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+  end
+  -- Cmd + Shift + = → zoom in
+  vim.keymap.set("n", "<D-+>", function()
+    change_scale_factor(1.1)
+  end)
+  -- Cmd + - → zoom out
+  vim.keymap.set("n", "<D-->", function()
+    change_scale_factor(1/1.1)
+  end)
+  -- Cmd + 0 → reset zoom
+  vim.keymap.set("n", "<D-0>", function()
+    vim.g.neovide_scale_factor = 1.0
+  end)
+end
