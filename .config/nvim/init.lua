@@ -94,11 +94,26 @@ require("lazy").setup({
     -- Latex 
     { "lervag/vimtex",
       lazy = false,
-      init = function()
-        --vim.g.vimtex_view_method = "zathura"
-        -- Disable VimTeX syntax highlighting
-        vim.g.vimtex_syntax_enabled = 0
-      end
+    init = function()
+      -- Disable VimTeX syntax highlighting if desired
+      vim.g.vimtex_syntax_enabled = 0
+
+      -- -------------------------------
+      -- Set XeLaTeX as default compiler
+      -- -------------------------------
+      vim.g.vimtex_compiler_latexmk = {
+        build_dir = '',           -- build directory (current folder)
+        callback = 1,             -- callback after compilation
+        continuous = 1,           -- continuous compilation
+        executable = 'latexmk',   -- use latexmk
+        options = {
+          '-xelatex',             -- <<<<< use XeLaTeX
+          '-synctex=1',           -- enable SyncTeX
+          '-interaction=nonstopmode',
+          '-file-line-error'
+        }
+      }
+    end
     },
     -- R programming 
     { "R-nvim/R.nvim",
