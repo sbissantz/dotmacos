@@ -97,9 +97,9 @@ require("lazy").setup({
       lazy = false,
       init = function ()
         vim.g.vimtex_compiler_latexmk_engines = {
-          _ = "-xelatex",
-          --_ = "-pdf -pdflatex=pdflatex"
-          --_ = "-lualatex",
+          _ = "-xelatex", -- use xelatex as the default engine
+          --_ = "-pdf -pdflatex=pdflatex" 
+          --_ = "-lualatex", 
         }
         --vim.g.vimtex_view_method = "skim"
         vim.g.vimtex_syntax_enabled = 0
