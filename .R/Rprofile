@@ -77,4 +77,3 @@ utils::rc.settings(ipck = TRUE)
   #message("Bye,bye!\n", date(), "\n")
   message("\nBye, ", Sys.getenv("USER"), "!\n")
 }
-
