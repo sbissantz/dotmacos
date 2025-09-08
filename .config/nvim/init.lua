@@ -91,30 +91,21 @@ require("lazy").setup({
 	-- GitHub Copilot
 	{ "github/copilot.vim", lazy = false, },
 
-    -- Latex 
-    { "lervag/vimtex",
+   --Latex
+    {
+      "lervag/vimtex",
       lazy = false,
-    init = function()
-      -- Disable VimTeX syntax highlighting if desired
-      vim.g.vimtex_syntax_enabled = 0
-
-      -- -------------------------------
-      -- Set XeLaTeX as default compiler
-      -- -------------------------------
-      vim.g.vimtex_compiler_latexmk = {
-        build_dir = '',           -- build directory (current folder)
-        callback = 1,             -- callback after compilation
-        continuous = 1,           -- continuous compilation
-        executable = 'latexmk',   -- use latexmk
-        options = {
-          '-xelatex',             -- <<<<< use XeLaTeX
-          '-synctex=1',           -- enable SyncTeX
-          '-interaction=nonstopmode',
-          '-file-line-error'
+      init = function ()
+        vim.g.vimtex_compiler_latexmk_engines = {
+          _ = "-xelatex",
+          --_ = "-pdf -pdflatex=pdflatex"
+          --_ = "-lualatex",
         }
-      }
-    end
+        --vim.g.vimtex_view_method = "skim"
+        vim.g.vimtex_syntax_enabled = 0
+      end
     },
+
     -- R programming 
     { "R-nvim/R.nvim",
      -- Only required if you also set defaults.lazy = true 
