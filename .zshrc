@@ -71,7 +71,6 @@ PS1="%n@%m %1~ %# "
 
 # Dotfile management with 'gitconf'
 # https://wiki.archlinux.org/index.php/Dotfiles
-# Moved from "gitc" to "gitconf" to "dotfiles" to "dot". 
 # Use 'dotfiles status' to see the status of your dotfiles.
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # The rest of the aliases live in ~/.zsh_aliases 
