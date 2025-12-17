@@ -9,10 +9,10 @@ elwe() {
             ssh elwetritsch
             ;;
         push)
-            rsync -av --progress ~/elwe/incoming/ elwetritsch:~/incoming/
+            rsync -av --progress -e ssh ~/elwe/incoming/ elwetritsch:~/incoming/
             ;;
         pull)
-            rsync -av --progress elwetritsch:~/outgoing/ ~/elwe/outgoing/
+            rsync -av --progress -e ssh elwetritsch:~/outgoing/ ~/elwe/outgoing/
             ;;
         sync)
             elwe push
