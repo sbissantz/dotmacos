@@ -19,6 +19,7 @@ disable log
 histfile=$HOME/.zsh_history
 histsize=2000
 savehist=1000
+setopt complete_in_word 
 setopt hist_ignore_dups
 setopt hist_reduce_blanks
 setopt share_history
