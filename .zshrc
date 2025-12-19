@@ -28,8 +28,8 @@ setopt share_history
 # key bindings
 # --------------------------------------------------
 
-# use emacs-style line editing with sane defaults
-bindkey -e
+# use vim-style line editing with sane defaults
+bindkey -v
 
 # --------------------------------------------------
 # prompt
