@@ -8,6 +8,8 @@
 # Exlude everything
 *
 # Keep...
+!.zsh_functions
+!.zsh_completions
 !.zsh_aliases
 !.zprofile
 !.zshrc
