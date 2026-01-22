@@ -65,7 +65,7 @@ alias ipi='ipconfig getifaddr en0'
 # --------------------------------------------------
 
 alias l='ls -F --color'
-alias ls='ls -F'
+alias ls='ls -F --color'
 alias ll='ls -lhF --color'
 alias la='ls -alhF --color'
 
