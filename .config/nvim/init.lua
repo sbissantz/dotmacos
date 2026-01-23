@@ -61,13 +61,29 @@ vim.opt.showmatch = true                     -- highlight matching brackets
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-      -- Colorscheme
-    { "rafi/awesome-vim-colorschemes", 
+
+    -- Colorscheme
+    { "wtfox/jellybeans.nvim", 
       lazy = false,
-      init = function() 
-        -- Set the colorscheme to jellybeans
-        vim.cmd("colorscheme jellybeans") 
-      end 
+      priority = 1100,
+      opts = {
+        transparent = false,
+        italics = true,
+        bold = true,
+        flat_ui = true,
+        background = {
+          dark = "jellybeans",
+          light = "jellybeans_light",
+        },
+        plugins = {
+          all = false,
+          auto = true,
+        },
+      },
+      config = function(_, opts)
+        require("jellybeans").setup(opts)
+        vim.cmd.colorscheme("jellybeans")
+      end,
     },
   
     -- Comment quickly
