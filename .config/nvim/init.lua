@@ -1,4 +1,4 @@
--- Bootstrap lazy.nvim
+-- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -15,16 +15,28 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
+-- ================================
+-- keymap and leader settings
+-- ================================
+
+-- make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
 
--- Map leaders first
+-- map leaders first
 vim.g.mapleader = ";"        -- main leader key
 vim.g.maplocalleader = ","  -- local leader key
 
+-- toggle between dark/light with <leader>tb
+vim.keymap.set("n", "<leader>tb", function()
+  vim.o.background = (vim.o.background == "dark") and "light" or "dark"
+  pcall(function()
+    require("lualine").refresh()
+  end)
+end, { desc = "Toggle background (light/dark)" })
+
 -- ================================
--- General Editing Settings
+-- general editing settings
 -- ================================
 vim.opt.ignorecase = true                -- searches are case-insensitive
 vim.opt.hlsearch = true                  -- highlight all search matches
@@ -41,24 +53,26 @@ vim.opt.colorcolumn = "80"               -- show a vertical line at 80 chars
 vim.opt.spelllang = { "en_us", "de_de" } -- spell checking languages
 
 -- ================================
--- Filetype & Syntax
+-- filetype & syntax
 -- ================================
-vim.cmd("filetype plugin indent on")        -- enable filetype detection and indentation
-vim.cmd("syntax on")                        -- enable syntax highlighting
+vim.cmd("filetype plugin indent on")    -- enable filetype detection and indentation
+vim.cmd("syntax on")                    -- enable syntax highlighting
 
 -- ================================
--- Command-line & Completion
+-- command-line & completion
 -- ================================
 vim.opt.wildmode = { "longest", "list" }   -- bash-like tab completions
 
 -- ================================
--- Optional / Visual Enhancements
+-- optional / visual enhancements
 -- ================================
-vim.opt.showmatch = true                     -- highlight matching brackets
--- vim.opt.compatible = false                -- unnecessary in Neovim; always off
+vim.opt.showmatch = true                -- highlight matching brackets
+-- vim.opt.compatible = false           -- unnecessary in Neovim; always off
 
+-- ================================
+-- plug-in manager (lazy nvim)
+-- ================================
 
--- Setup lazy.nvim
 require("lazy").setup({
   spec = {
 
@@ -86,28 +100,28 @@ require("lazy").setup({
       end,
     },
   
-    -- Comment quickly
+    -- comment quickly
     { "preservim/nerdcommenter", lazy = false },
 
-    -- Surround quickly
+    -- surround quickly
     { "tpope/vim-surround", lazy = false },
 
-    -- Parenthesis matching
+    -- parenthesis matching
     { "jiangmiao/auto-pairs"},
 
-    -- Grammar and spelling
+    -- grammar and spelling
     { "rhysd/vim-grammarous"},
 
-    -- Stan syntax highlighting
+    -- stan syntax highlighting
     { "eigenfoo/stan-vim" },
 
-    -- Better syntax support
+    -- better syntax support
     { "sheerun/vim-polyglot" },
 
-	-- GitHub Copilot
+	-- gitHub copilot
 	{ "github/copilot.vim", lazy = false, },
 
-   --Latex
+   --latex
     {
       "lervag/vimtex",
       lazy = false,
@@ -122,11 +136,11 @@ require("lazy").setup({
       end
     },
 
-    -- R programming 
+    -- r programming 
     { "R-nvim/R.nvim",
-     -- Only required if you also set defaults.lazy = true 
+     -- only required if you also set defaults.lazy = true 
     lazy = false,
-    -- R.nvim is still young and we may make some breaking changes from time
+    -- r.nvim is still young and we may make some breaking changes from time
     -- to time (but also bug fixes all the time). If configuration stability
     -- is a high priority for you, pin to the latest minor version, but unpin
     -- it and try the latest version before reporting an issue:
@@ -146,7 +160,8 @@ require("lazy").setup({
             rconsole_width = 78,
             objbr_mappings = { -- Object browser keymap
                 c = 'class', -- Call R functions
-                ['<localleader>gg'] = 'head({object}, n = 15)', -- Use {object} notation to write arbitrary R code.
+                -- use {object} notation to write arbitrary r code.
+                ['<localleader>gg'] = 'head({object}, n = 15)', 
                 v = function()
                     -- Run lua functions
                     require('r.browser').toggle_view()
@@ -159,8 +174,8 @@ require("lazy").setup({
                 "RSaveClose",
             },
         }
-        -- Check if the environment variable "R_AUTO_START" exists.
-        -- If using fish shell, you could put in your config.fish:
+        -- check if the environment variable "R_AUTO_START" exists.
+        -- if using fish shell, you could put in your config.fish:
         -- alias r "R_AUTO_START=true nvim"
         if vim.env.R_AUTO_START == "true" then
             opts.auto_start = "on startup"
@@ -179,7 +194,7 @@ require("lazy").setup({
           end,
       },
     },
-    -- R syntax highlighting
+    -- r syntax highlighting
     { "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     config = function ()
@@ -198,30 +213,30 @@ require("lazy").setup({
 })
 
 -- ================================
--- Neovide-specific settings
+-- neovide-specific settings
 -- ================================
 --
 -- https://neovide.dev/faq.html#how-can-i-dynamically-change-the-scale-at-runtime
 --
 if vim.g.neovide then
 
-  -- GUI font
+  -- gui font
   vim.opt.guifont = "FiraCode Nerd Font:h11"
 
-  -- Initial scale factor
+  -- initial scale factor
   vim.g.neovide_scale_factor = 1.0
   local change_scale_factor = function(delta)
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
   end
-  -- Cmd + Shift + = → zoom in
+  -- cmd + shift + = → zoom in
   vim.keymap.set("n", "<D-+>", function()
     change_scale_factor(1.1)
   end)
-  -- Cmd + - → zoom out
+  -- cmd + - → zoom out
   vim.keymap.set("n", "<D-->", function()
     change_scale_factor(1/1.1)
   end)
-  -- Cmd + 0 → reset zoom
+  -- cmd + 0 → reset zoom
   vim.keymap.set("n", "<D-0>", function()
     vim.g.neovide_scale_factor = 1.0
   end)
