@@ -6,7 +6,7 @@
 elwe() {
     case "$1" in
         hi)
-            ssh elwetritsch
+            ssh -X elwetritsch
             ;;
         push)
             rsync -av --progress -e ssh ~/elwe/incoming/ elwetritsch:~/incoming/
