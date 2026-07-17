@@ -41,7 +41,7 @@ end, { desc = "Toggle background (light/dark)" })
 vim.opt.ignorecase = true                -- searches are case-insensitive
 vim.opt.hlsearch = true                  -- highlight all search matches
 vim.opt.number = true                    -- show line numbers
-vim.opt.number = true                    -- show relative line numbers
+vim.opt.relativenumber = true            -- show relative line numbers
 vim.opt.autoindent = true                -- auto-indent new lines
 vim.opt.tabstop = 4                      -- number of spaces a tab counts for
 vim.opt.softtabstop = 4                  -- backspace deletes proper spaces
@@ -183,16 +183,6 @@ require("lazy").setup({
         end
         require("r").setup(opts)
     end,
-    },
-    -- R completion
-    { "R-nvim/cmp-r",
-      {
-          "hrsh7th/nvim-cmp",
-          config = function()
-              require("cmp").setup({ sources = {{ name = "cmp_r" }}})
-              require("cmp_r").setup({})
-          end,
-      },
     },
     -- r syntax highlighting
     { "nvim-treesitter/nvim-treesitter",
