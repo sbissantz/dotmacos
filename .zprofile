@@ -48,11 +48,16 @@ export R_ENVIRON_USER=${R_USER}/.R/Renviron
 # Specifiers "%v" and "%p" to host multiple R versions
 # See: /setups/R-setup (.Renviron)
 
+
+
 # LaTex
 #
 # export PATH=$PATH:/opt/texlive/2021/bin/x86_64-linux
 # export MANPATH=$MANPATH:/opt/texlive/2021/texmf-dist/doc/man
 # export INFOPATH=$INFOPATH:/opt/texlive/2021/texmf-dist/doc/info
+
+# Claude
+export CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE=1
 
 # Setting PATH for Python 3.10
 # The original version is saved in .zprofile.pysave
