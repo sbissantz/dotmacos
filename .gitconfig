@@ -30,3 +30,5 @@
 	abbrevcommit = yes
 [push]
 	default = simple
+[init]
+	defaultBranch = master
