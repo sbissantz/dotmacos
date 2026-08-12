@@ -27,6 +27,12 @@
 !.R/*
 .R/Rsecrets
 
+# .claude/ holds session transcripts, history.jsonl and telemetry — all private.
+# Unignore the directory so git can descend into it, then exactly one file.
+# Never use !.claude/* here: this repo is public.
+!.claude/
+!.claude/CLAUDE.md
+
 !setups/
 !setups/*
 
