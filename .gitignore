@@ -32,6 +32,10 @@
 # Never use !.claude/* here: this repo is public.
 !.claude/
 !.claude/CLAUDE.md
+!.claude/hooks/
+!.claude/hooks/**
+!.claude/skills/
+!.claude/skills/**
 
 !setups/
 !setups/*
