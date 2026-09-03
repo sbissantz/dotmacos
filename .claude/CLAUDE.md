@@ -15,6 +15,15 @@
 ## Files
 - Use `-` to delimit words in file names.
 
+## Shell
+
+User aliases apply to your commands. Bypass with a leading backslash
+rather than adding flags.
+
+- `\cp`, `\mv`, `\rm` — aliased to `-i`; the confirmation prompt has nothing
+  to answer it and the call hangs. Do not use `-f` to force past it: the
+  backslash skips my alias while keeping the real overwrite check.
+
 ## Code
 - R by default, not Python unless I ask.
   - Specifically, use snake_case for functions, arguments, and objects
@@ -23,7 +32,7 @@
 - Stan for Bayesian inference.
 
 ## Comments
-- Lower case, imperative form.
+- Always lower case and imperative form.
 - As short as possible — no verbose wording.
 
 ## Git
@@ -43,3 +52,4 @@
   unresolved. If nothing is, say so.
 - Before a computation is likely to run over five minutes, give me a rough
   estimate.
+
