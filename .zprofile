@@ -10,15 +10,6 @@ if [ -x /usr/libexec/path_helper ]; then
 	eval `/usr/libexec/path_helper -s`
 fi
 
-# Make sure ~/.zshrc is loaded
-#
-if [ -f $HOME/.zshrc ]; then
-	. $HOME/.zshrc 
-else
-	echo "Steven, ~/.zshrc is missing"
-	sleep 2
-fi
-
 # Note: Expand the default path with '$PATH:' do not overwrite it!
 
 # Language
@@ -30,10 +21,6 @@ export LC_ALL=en_US.UTF-8
 #
 export EDITOR="nvim"
 export ALTERNATE_EDITOR="vi"
-
-# Browser
-#
-export BROWSER=/usr/bin/firefox
 
 # R
 #
@@ -47,8 +34,6 @@ export R_ENVIRON_USER=${R_USER}/.R/Renviron
 # export R_LIBS_USER=${R_USER}/Rlibs/%v
 # Specifiers "%v" and "%p" to host multiple R versions
 # See: /setups/R-setup (.Renviron)
-
-
 
 # LaTex
 #

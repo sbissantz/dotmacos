@@ -16,9 +16,9 @@ disable log
 # history
 # --------------------------------------------------
 
-histfile=$HOME/.zsh_history
-histsize=2000
-savehist=1000
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=2000
+SAVEHIST=1000
 setopt complete_in_word 
 setopt hist_ignore_dups
 setopt hist_reduce_blanks
@@ -42,9 +42,6 @@ PS1="%n@%m %1~ %# "
 # --------------------------------------------------
 
 [ -r "/etc/zshrc_$TERM_PROGRAM" ] && source "/etc/zshrc_$TERM_PROGRAM"
-
-# Useful support for interacting with Terminal.app or other terminal programs
-[ -r "/etc/zshrc_$TERM_PROGRAM" ] && . "/etc/zshrc_$TERM_PROGRAM"
 
 # --------------------------------------------------
 # dotfile management (bare git repo)
@@ -77,4 +74,4 @@ compinit
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
-eval "$(air generate-shell-completion zsh)"
+command -v air >/dev/null && eval "$(air generate-shell-completion zsh)"

@@ -23,6 +23,8 @@ rather than adding flags.
 - `\cp`, `\mv`, `\rm` — aliased to `-i`; the confirmation prompt has nothing
   to answer it and the call hangs. Do not use `-f` to force past it: the
   backslash skips my alias while keeping the real overwrite check.
+- `elwe {hi|push|pull|sync}` wraps ssh/rsync to the elwetritsch host.
+  Use it instead of writing rsync commands by hand.
 
 ## Code
 - R by default, not Python unless I ask.
