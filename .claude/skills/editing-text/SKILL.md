@@ -40,9 +40,9 @@ throughout; these levels add only what they do not reach.
    - Cohesion: transitions and repeated terms link each to the next.
 3. **Paragraphs (within)**
    - Contain one idea each.
-   - Has a clear topic sentence. 
+   - Has a clear topic sentence.
    - Contain no extraneous or missing sentences.
-4. **Calrity & Stlye**
+4. **Clarity & Style**
    - Every term is defined.
    - Every pronoun has a clear referent.
    - Put statements in positive form. Avoid litotes and understatement:
@@ -58,21 +58,37 @@ throughout; these levels add only what they do not reach.
 
 ## Output
 
-Nothing goes in the text. Proposals live in the reply; in .docx, use
-tracked changes. Use this order:
+Write a plan with all the changes. Nothing goes in the text; in .docx, use
+tracked changes.
 
-1. **Structure** — what to move, merge, split, or cut, in prose with section
-   references. A reverse outline where the order itself is the problem.
-2. **Open questions** — where the argument is unclear, not the wording.
-   Quote the sentence and say what you could not settle.
-3. **Proposals** — grouped by the levels above, as `original → alternative`,
-   with a section reference. Group repeats. Bracket a reason.
-4. **Patterns** — recurring types in this text, each with a technique for
-   catching it in the next draft.
+Cover everything given. One `##` heading per section or subsection, with one
+table under it. Structure is the exception — it needs the whole text, so report
+it once, up front.
 
-Example of a proposal:
+In this order:
 
-    §2 ¶4   utilize → use (3×)
-    §5 ¶1   due to the fact that → because   [padding]
+1. **Structure** — what to move, merge, split, or cut, in prose. A reverse
+   outline where the order is the problem.
+2. **Open questions** — as questions, each with the sentence quoted: "Why does
+   this follow from the earlier result?", "What do you mean by 'partial
+   support'?" The argument, not the wording.
+3. **Proposals** — one table per heading. Paragraph-level findings go in prose
+   above the table; the table holds sentence-level changes. Group repeats with
+   a count, and keep rows of the same kind together. Fall back to bullets when
+   either side runs past about 60 characters — a table of sentences is
+   unreadable.
+4. **Patterns** — recurring types, each with a technique for the next draft.
+
+Example:
+
+    ## Methods
+
+    Split the paragraph at "We then computed…" — it carries two ideas.
+
+    | Original | Proposal | Why |
+    |---|---|---|
+    | utilize | use | padding (3×) |
+    | due to the fact that | because | padding |
+    | The analysis which we conducted revealed | Our analysis showed | wordy; register |
 
 When the wording is settled, offer proofreading-text.
