@@ -1,57 +1,43 @@
-# Working with me
+# Communication
+- Reply in plain American English. If I write in German, use Standard German; if I ask for another language, use that
+- Questions (even "can we…?"), "discuss", and "brainstorm" call for talk, not action. Discuss until I confirm, then update the plan, text, or code
+- Propose one next step: the most important and urgent
+- Don't say "done" while anything is unresolved, report it
+- Never make things up. 
+- If something is unclear, or you're unsure or guessing, say so and what would settle it
+- If you lack information, list the items I can fill in
 
-## Language
-- American English only — spelling, vocabulary, idiom. No British forms, ever,
-    in chat replies or in anything written to a file. Hard constraint.
-- I am a non-native (American) English speaker. 
-  - Fix typos, grammar, and false friends silently — that restores what I meant.
-  - Rewriting chooses different words, which is mine to decide: mark and propose, never apply silently.
-- German only if my message is mostly German.
+# Code
+- Use R by default
+- Use Stan for Bayesian inference
+- Prefer self-documenting code
 
-## Honesty
-- "I don't know" and "I am unsure" are useful answers — say what would settle it.
-- An educated guess is fine — label it as one and say what it rests on.
+## Naming
+- Use snake_case for functions, arguments, and objects
+- Use `-` between words in file names
+- Functions start with a verb
+- Objects are concise nouns
+- Logicals name the TRUE state with an adjective or past participle (`finished`, `verbose`)
 
-## Files
-- Use `-` to delimit words in file names.
+## R
+- Follow the [tidyverse style guide](https://style.tidyverse.org/)
+- Prefer base R over tidyverse
+- An Air hook formats `.R` and `.qmd` files
+- Use lambda syntax `\()` for short anonymous functions, `function()` for multi-line or named ones
+- Logical arguments may be a bare verb (`drop`, `keep_data`)
+- No `is_` prefix: it marks a function
+- Prefer running single test files with `testthat::test_file()`, not the whole suite
 
-## Shell
+## Stan
+- Follow the [Stan style guide](https://mc-stan.org/docs/stan-users-guide/style-guide.html)
+- Call Stan from R with cmdstanr
+- Uppercase sizes like `N` and `K` are fine despite snake_case
+- Be sure to typecheck when you're done making a series of code changes
 
-User aliases apply to your commands. Bypass with a leading backslash
-rather than adding flags.
+# Shell
+- My aliases apply. `cp`, `mv`, `rm` are aliased to `-i` and hang waiting for input: bypass with a backslash (`\rm`), not `-f`
+- Use `elwe {hi|push|pull|sync}` for ssh/rsync to the elwetritsch host instead of hand-written rsync
 
-- `\cp`, `\mv`, `\rm` — aliased to `-i`; the confirmation prompt has nothing
-  to answer it and the call hangs. Do not use `-f` to force past it: the
-  backslash skips my alias while keeping the real overwrite check.
-- `elwe {hi|push|pull|sync}` wraps ssh/rsync to the elwetritsch host.
-  Use it instead of writing rsync commands by hand.
-
-## Code
-- R by default, not Python unless I ask.
-  - Specifically, use snake_case for functions, arguments, and objects
-  - Specifically, prefer base R over tidyverse unless I ask.
-  - `.R` and `.qmd` are formatted automatically (`~/.claude/hooks/air-format.sh`).
-- Stan for Bayesian inference.
-
-## Comments
-- Always lower case and imperative form.
-- As short as possible — no verbose wording.
-
-## Git
-- Never commit, stage, or push anything unless I ask. Committing is my call.
-  An approved plan that mentions a commit is not permission to make it.
-- Never add yourself as a contributor unless I invite you to. No
-  `Co-Authored-By` trailer, no attribution line in the commit message.
-
-## How to work with me
-- A question from me is a question, not an instruction. Answer it, then ask
-  again.
-- Discussing a feature is not planning it. "Discuss" or "brainstorm" means talk,
-  not plan — give me your feedback and opinion first.
-- When you propose a next step, propose one: the most important and urgent.
-- When you lack information, give me a list of items I can fill in.
-- Never say "done" without naming the checks you ran and anything left
-  unresolved. If nothing is, say so.
-- Before a computation is likely to run over five minutes, give me a rough
-  estimate.
-
+# Git
+- Never stage, commit, or push unless I ask. An approved plan that mentions a commit doesn't count
+- No attribution unless I invite it: no `Co-Authored-By` trailer or "Generated with" line in commits or PRs
