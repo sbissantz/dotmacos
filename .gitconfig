@@ -12,6 +12,7 @@
 	editior = nvim
 	abbrev = 8
 	editor = nvim
+	excludesFile = /Users/steven/.gitignore_global
 [credential]
 	helper = cache
 [format]
